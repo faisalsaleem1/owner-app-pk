@@ -1,0 +1,255 @@
+<section>
+
+    <div class="select-days">
+        <div class="main-buttons">
+            <button type="button" class="custom-btn" [ngClass]="{'active-btn': activeButtonIndex === 'today'}"
+                (click)="setActiveButton('today')">
+                Today
+            </button>
+            <button type="button" class="custom-btn" [ngClass]="{'active-btn': activeButtonIndex === 'yesterday'}"
+                (click)="setActiveButton('yesterday')">
+                Yesterday
+            </button>
+            <button type="button" class="custom-btn" [ngClass]="{'active-btn': activeButtonIndex === 'thisweek'}"
+                (click)="setActiveButton('thisweek')">
+                This Week
+            </button>
+            <button type="button" class="custom-btn" [ngClass]="{'active-btn': activeButtonIndex === 'lastweek'}"
+                (click)="setActiveButton('lastweek')">
+                Last Week
+            </button>
+            <button type="button" class="custom-btn" [ngClass]="{'active-btn': activeButtonIndex === 'thismonth'}"
+                (click)="setActiveButton('thismonth')">
+                This Month
+            </button>
+            <button type="button" class="custom-btn" [ngClass]="{'active-btn': activeButtonIndex === 'lastmonth'}"
+                (click)="setActiveButton('lastmonth')">
+                Last Month
+            </button>
+            <button type="button" class="custom-btn d-desk-none"
+                [ngClass]="{'active-btn': activeButtonIndex === 'thisyear'}" (click)="setActiveButton('thisyear')">
+                This Year
+            </button>
+            <button type="button" class="custom-btn d-desk-none"
+                [ngClass]="{'active-btn': activeButtonIndex === 'lastyear'}" (click)="setActiveButton('lastyear')">
+                Last Year
+            </button>
+        </div>
+
+    </div>
+
+    <!-- date piker -->
+    <div class="px-3 py-2 calndr-main">
+        <!-- <app-date-range-selection [from]="defaultFrom" [to]="defaultTo"
+            (dateRangeSelection)="onDateRangeSelection($event)">
+        </app-date-range-selection> -->
+        <!-- <div class="py-2 " style="padding-left: 17px; padding-right: 17px;">
+            <div class="d-flex justify-content-center">
+                <div class="col-12">
+                    <div class="input-group" style="height: 45px;" data-bs-toggle="collapse"
+                        data-bs-target="#datepickerContainer" (click)="isModalOpen = !isModalOpen">
+                        <input class="form-control" readonly placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model"
+                            ngbDatepicker #d="ngbDatepicker" (ngModelChange)="updateFormattedDate()" />
+
+                        <p class="date-wrapper">{{ onChooseDate }}</p>
+                        <button class="calender-open-btn" type="button" aria-expanded="false"
+                            aria-controls="datepickerContainer">
+                            <img src="/assets/dashboard/arrow-up.svg" alt="arrow-up"
+                                [ngClass]="{'rotate-down': isModalOpen, 'rotate-up': !isModalOpen}">
+                        </button>
+                    </div>
+
+
+                    <div id="datepickerContainer" class="collapse position-absolute">
+                        <ngb-datepicker #dp [(ngModel)]="model"></ngb-datepicker>
+
+                        <div class="customFooter">
+                            <div class="d-flex justify-content-between w-100 cancel-chose-date">
+                                <button class="btn btn-outline-secondary btn-sm w-50 cancel-btn" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#datepickerContainer"
+                                    aria-expanded="false" aria-controls="datepickerContainer">Cancel
+                                </button>
+
+                                <button class="btn btn-primary btn-sm w-50 choose-btn" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#datepickerContainer"
+                                    aria-expanded="false" aria-controls="datepickerContainer"
+                                    (click)="updateFormattedDate(); d.close()">Choose
+                                    Date
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <!-- body -->
+    <div class="pt-3">
+        <div class="main-general d-show-mbl d-none">
+            <button class="d-flex align-items-center justify-content-between general-btn" (click)="isShowcards = !isShowcards">
+                <strong>General Information</strong>
+                <!-- <img src="/assets/dashboard/down-icon.svg" width="15.53px" alt="down-icon"> -->
+                <img src="/assets/dashboard/arrow-up.svg" alt="arrow-up"
+                [ngClass]="{'rotate-up': isShowcards, 'rotate-down': !isShowcards}">
+            </button>
+        </div>
+        <!-- cards 1st -->
+        <div class="d-flex flex-wrap cards-main">
+            <div class="d-flex align-items-center justify-content-center cards">
+                <strong>
+                    <h2 class="card-num g-card-num">9,99,999</h2>
+                    <h3 class="card-txt g-card-txt">Total Users</h3>
+                </strong>
+            </div>
+            <div class="d-flex flex-column align-items-center justify-content-start cards card-two">
+                <div class="text-center top-text trans-txt">Transection</div>
+                <div class="trns-mid-txt">
+                    <div class="text-center mid-text"><strong>Total pay
+                            IN</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9,99,999
+                    </div>
+                    <div class="text-center mid-text"><strong>Total pay OUT</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        9,99,999
+                    </div>
+                </div>
+            </div>
+            <!-- for desktop -->
+            <div class="d-flex align-items-center justify-content-center cards d-none-mbl">
+                <strong>
+                    <h2 class="card-num g-card-num">9,99,999</h2>
+                    <h3 class="card-txt g-card-txt">Total Masters</h3>
+                </strong>
+            </div>
+            <div class="d-flex flex-column align-items-center justify-content-center cards d-none-mbl togle-card">
+                <div class="text-center top-text trans-txt">Users</div>
+                <div class="trns-mid-txt">
+                    <div class="text-center mid-text"><strong>Total pay IN</strong>&nbsp;&nbsp;&nbsp;&nbsp; 9,99,999
+                    </div>
+                    <div class="text-center mid-text"><strong>Total pay OUT</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                        9,99,999
+                    </div>
+                </div>
+            </div>
+            <!-- for desktop -->
+             <!-- for mobile -->
+            <ng-container *ngIf="isShowcards">
+            <div class="d-flex align-items-center justify-content-center cards d-show-mbl d-none">
+                <strong>
+                    <h2 class="card-num g-card-num">9,99,999</h2>
+                    <h3 class="card-txt g-card-txt">Total Masters</h3>
+                </strong>
+            </div>
+            <div class="d-flex flex-column align-items-center justify-content-center cards d-show-mbl d-none togle-card">
+                <div class="text-center top-text trans-txt">Users</div>
+                <div class="trns-mid-txt">
+                    <div class="text-center mid-text"><strong>Total pay IN</strong>&nbsp;&nbsp;&nbsp;&nbsp; 9,99,999
+                    </div>
+                    <div class="text-center mid-text"><strong>Total pay OUT</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                        9,99,999
+                    </div>
+                </div>
+            </div>
+            </ng-container>
+            <!-- for mobile -->
+        </div>
+        <!-- line Deposits -->
+        <div class="main-general">
+            <button class="d-flex align-items-center justify-content-between deposit-btn">
+                <strong>Deposits</strong>
+            </button>
+        </div>
+        <!-- 2nd cards -->
+        <div class="d-flex flex-wrap cards-main">
+            <div class="d-flex flex-column align-items-center justify-content-between cards">
+                <div>
+                    <div class="text-center top-text text-uppercase">amount</div>
+                    <h2 class="amount-card-num text-center">9,99,999</h2>
+                </div>
+                <div class="text-center mid-text pb-1"><strong>Total
+                        Deposits</strong> :
+                    192203
+                </div>
+            </div>
+            <div class="d-flex flex-column align-items-center justify-content-between cards amount-card-2">
+                <div>
+                    <div class="text-center top-text text-uppercase">amount</div>
+                    <h2 class="amount-card-num text-center">9,99,999</h2>
+                </div>
+                <div class="text-center mid-text pb-1"><strong>Total
+                        Approved</strong> :
+                    192203
+                </div>
+            </div>
+            <div class="d-flex flex-column align-items-center justify-content-between cards amount-card-3">
+                <div>
+                    <div class="text-center top-text text-uppercase">amount</div>
+                    <h2 class="amount-card-num text-center">9,99,999</h2>
+                </div>
+                <div class="text-center mid-text pb-1"><strong>Total
+                        Reject</strong> :
+                    192203
+                </div>
+            </div>
+            <div class="d-flex flex-column align-items-center justify-content-between cards amount-card-4">
+                <div>
+                    <div class="text-center top-text text-uppercase">amount</div>
+                    <h2 class="amount-card-num text-center">9,99,999</h2>
+                </div>
+                <div class="text-center mid-text pb-1"><strong>Total
+                        Pending</strong> :
+                    192203
+                </div>
+            </div>
+
+        </div>
+        <!-- line withdraw -->
+        <div class="main-general">
+            <button class="d-flex align-items-center justify-content-between withdraw-btn">
+                <strong>Withdrawal</strong>
+            </button>
+        </div>
+        <!-- 3rd cards -->
+        <div class="d-flex flex-wrap cards-main">
+            <div class="d-flex flex-column align-items-center justify-content-between cards">
+                <div>
+                    <div class="text-center top-text text-uppercase">amount</div>
+                    <h2 class="amount-card-num text-center">9,99,999</h2>
+                </div>
+                <div class="text-center mid-text pb-1"><strong>Total
+                        Deposits</strong> :
+                    192203
+                </div>
+            </div>
+            <div class="d-flex flex-column align-items-center justify-content-between cards amount-card-2">
+                <div>
+                    <div class="text-center top-text text-uppercase">amount</div>
+                    <h2 class="amount-card-num text-center">9,99,999</h2>
+                </div>
+                <div class="text-center mid-text pb-1"><strong>Total
+                        Approved</strong> :
+                    192203
+                </div>
+            </div>
+            <div class="d-flex flex-column align-items-center justify-content-between cards amount-card-3">
+                <div>
+                    <div class="text-center top-text text-uppercase">amount</div>
+                    <h2 class="amount-card-num text-center">9,99,999</h2>
+                </div>
+                <div class="text-center mid-text pb-1"><strong>Total
+                        Reject</strong> :
+                    192203
+                </div>
+            </div>
+            <div class="d-flex flex-column align-items-center justify-content-between cards amount-card-4">
+                <div>
+                    <div class="text-center top-text text-uppercase">amount</div>
+                    <h2 class="amount-card-num text-center">9,99,999</h2>
+                </div>
+                <div class="text-center mid-text pb-1"><strong>Total
+                        Pending</strong> :
+                    192203
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
