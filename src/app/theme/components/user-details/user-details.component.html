@@ -1,0 +1,32 @@
+<!-- Desktop -->
+<div class="deskcontainer mt-4 d-none">
+    <div class="deskcard">
+      <div class="card-body">
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th *ngFor="let item of tableHeaderData; trackBy: trackByIndex">
+                {{ item }}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let data of tableContentData;
+                let i = index;
+                trackBy: trackByIndex
+              "
+            >
+              <td>{{ data.sportname }}</td>
+              <td>{{ data.companyName }}</td>
+              <td>{{ data.settle }}</td>
+              <td>{{ data.unsettle }}</td>
+              <td>{{ data.void }}</td>
+              <td>{{data.rejected}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>

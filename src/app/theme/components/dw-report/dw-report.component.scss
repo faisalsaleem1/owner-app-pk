@@ -1,0 +1,443 @@
+section {
+    overflow-x: hidden;
+}
+
+.general-btn {
+    border: 0;
+    gap: 5px;
+    width: 100%;
+    padding: 0 16px 0 25px;
+    border-radius: 15px;
+    background-color: #d9d9d9;
+    height: 41px;
+}
+
+.main-general {
+    padding: 0 10.5px;
+}
+
+.cards-main {
+    padding: 15px 22px;
+    column-gap: 30px;
+    row-gap: 15px;
+}
+
+.cards {
+    border: 0;
+    gap: 5px;
+    max-width: 175px;
+    width: 100%;
+    color: white;
+    border-radius: 10px;
+    height: 88px;
+    background: linear-gradient(180deg, #5ab4f5 0%, #0060a5 100%);
+}
+
+.card-num {
+    line-height: 36.2px;
+}
+
+.card-txt {
+    line-height: 35px;
+}
+
+.top-text {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+.mid-text {
+    font-size: 12px;
+    font-weight: 500;
+    text-align: left !important;
+    text-transform: capitalize;
+    font-family: Kaisei Decol;
+}
+.mid-text strong {
+    font-weight: 700 !important;
+    font-family: system-ui;
+}
+.pb-1 {
+    font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+}
+
+.deposit-btn {
+    border: 0;
+    gap: 5px;
+    width: 100%;
+    padding: 0 16px 0 25px;
+    border-radius: 15px;
+    background-color: #d9d9d9;
+    background: linear-gradient(90deg, #027723 0%, #00ca38, #00ca38 100%);
+    height: 41px;
+    color: white;
+}
+
+.amount-card-num {
+    line-height: 30px;
+}
+
+.amount-card-2 {
+    background: linear-gradient(0deg, #027723 0%, #00ca38 100%);
+}
+.amount-card-3 {
+    background: linear-gradient(180deg, #ff0000 0%, #490000 100%);
+}
+.amount-card-4 {
+    background: linear-gradient(180deg, #ffff00 0%, #8b8b00 100%);
+}
+.withdraw-btn {
+    border: 0;
+    gap: 5px;
+    width: 100%;
+    padding: 0 16px 0 25px;
+    border-radius: 15px;
+    background-color: #d9d9d9;
+    background: linear-gradient(90deg, #ff0000 0%, #490000 100%);
+    height: 41px;
+    color: white;
+}
+.active-btn {
+    background-color: transparent;
+    color: #000;
+    border-bottom: 2px solid #60269e;
+}
+
+.card-num,
+.card-txt {
+    margin: 0px;
+}
+.amount-card-4 {
+    color: #000;
+}
+// DESK
+@media only screen and (min-width: 1024px) {
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: end;
+    }
+    .main-buttons {
+        width: 100%;
+        column-gap: 30px;
+    }
+    .py-2 {
+        padding-top: 7.5px !important;
+        height: 100%;
+        padding-bottom: 0px !important;
+    }
+    .general-btn {
+        display: none !important;
+    }
+    .main-general {
+        padding-left: 22px;
+    }
+    .deposit-btn,
+    .withdraw-btn {
+        width: 172px !important;
+        height: 44px !important;
+        border-radius: 10px !important;
+        font-size: 20px;
+        text-transform: uppercase;
+        padding: unset !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+    .cards-main {
+        width: 100%;
+        padding: 30px 22px;
+        column-gap: 45px;
+        row-gap: 15px;
+    }
+    .cards {
+        max-width: 250px;
+        width: 100%;
+        border-radius: 20px;
+        height: 101px;
+        display: flex !important;
+        justify-content: center !important;
+    }
+    .pt-3 {
+        width: 100% !important;
+        padding-top: 0px !important;
+    }
+    .mid-text {
+        font-size: 15px;
+    }
+    .top-text {
+        font-size: 16px;
+    }
+    .card-two {
+        order: 3;
+        justify-content: start !important;
+        padding-top: 10px;
+    }
+    .togle-card {
+        justify-content: start !important;
+        padding-top: 10px;
+    }
+    .card-num {
+        margin: 0px !important;
+        text-align: center;
+    }
+    .card-txt {
+        line-height: 35px;
+        margin: 0px !important;
+        text-align: center;
+        font-size: 18px;
+        position: relative;
+        top: 5px;
+    }
+    .amount-card-num,
+    .card-num {
+        font-size: 25px;
+        margin: 0px !important;
+        text-align: center;
+        line-height: 36.5px !important;
+    }
+    .px-3 {
+        padding-left: 3px !important;
+    }
+    .d-desk-none {
+        display: none !important;
+    }
+
+    .pb-1 {
+        font-size: 14px;
+    }
+    .trans-txt {
+        font-size: 15px;
+    }
+}
+.amount-card-num,
+.card-num {
+    font-family: Kaisei Decol;
+}
+
+@media only screen and (max-width: 430px) {
+    .d-none-mbl {
+        display: none !important;
+    }
+    .d-show-mbl {
+        display: flex !important ;
+    }
+    .cards {
+        max-width: 48%;
+    }
+    .mid-text {
+        font-size: 11px;
+    }
+    .cards-main {
+        column-gap: 10px;
+        justify-content: center;
+    }
+    .card-txt {
+        font-size: 16px;
+    }
+    .card-num h2 {
+        font-size: 25px;
+    }
+    .card-num h3 {
+        font-size: 18px;
+    }
+    .cards-main {
+        padding: 15px 15px;
+    }
+    #datepickerContainer {
+        width: calc(100% - 69px) !important;
+    }
+    .top-text {
+        font-size: 12px;
+    }
+    .deposit-btn,
+    .withdraw-btn {
+        text-transform: capitalize;
+    }
+}
+@media only screen and (max-width: 375px) {
+    .mid-text {
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width: 350px) {
+    .mid-text {
+        font-size: 9px;
+    }
+}
+@media only screen and (max-width: 319px) {
+    .cards-main {
+        padding: 13px 13px;
+        column-gap: 5px;
+    }
+    .cards {
+        max-width: 48%;
+    }
+    .mid-text {
+        font-size: 8px;
+    }
+    .card-num,
+    .card-txt {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .cards {
+        border-radius: 20px !important;
+    }
+    .cancel-btn,
+    .choose-btn {
+        height: 50px;
+        font-size: 20px;
+    }
+    .mid-text strong {
+        font-size: 12px;
+        font-weight: 700 !important;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+            Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+            sans-serif !important;
+    }
+    .mid-text {
+        font-size: 15px !important;
+        font-family: Kaisei Decol !important;
+        font-weight: 500;
+    }
+    .pb-1 {
+        line-height: 14.52px;
+        font-family: unset !important;
+    }
+    .trns-mid-txt .text-center {
+        line-height: 21.72px;
+    }
+}
+.general-btn strong {
+    color: #000;
+}
+.rotate-up {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+/* Rotate down when the modal is open */
+.rotate-down {
+    transform: rotate(180deg); /* Rotates the arrow downwards */
+    transition: transform 0.3s ease;
+}
+@media only screen and (min-width: 375px) and (max-width: 430px) {
+    .top-text {
+        font-size: 14px;
+        font-weight: 700;
+    }
+    .trans-txt {
+        font-size: 12px;
+    }
+    .pb-1 {
+        line-height: 14.52px;
+        font-size: 12px !important;
+        font-weight: 700;
+    }
+    .trns-mid-txt {
+        display: flex;
+        justify-content: start;
+        width: 100%;
+        flex-direction: column;
+    }
+    .trns-mid-txt .text-center {
+        text-align: left !important;
+        padding-left: 10px;
+    }
+    .trns-mid-txt div:last-child {
+        padding-left: 5px;
+    }
+    .amount-card-num,
+    .card-num {
+        font-family: Kaisei Decol;
+        font-size: 25px;
+        line-height: 28.96px;
+    }
+    .g-card-num {
+        font-size: 25px;
+    }
+    .g-card-txt {
+        font-size: 20px;
+    }
+    .cards {
+        gap: 0px;
+        justify-content: center !important;
+    }
+    .card-two {
+        justify-content: unset !important;
+        align-items: center !important;
+        padding-top: 5px;
+    }
+}
+@media only screen and (max-width: 375px) {
+    .top-text {
+        font-size: 12px;
+        font-weight: 700;
+    }
+    .trans-txt {
+        font-size: 10px;
+    }
+    .pb-1 {
+        line-height: 14.52px;
+        font-size: 10px !important;
+        font-weight: 500 !important;
+    }
+    .trns-mid-txt {
+        display: flex;
+        justify-content: start;
+        width: 100%;
+        flex-direction: column;
+    }
+    .trns-mid-txt .text-center {
+        text-align: center !important;
+        // padding-left: 10px;
+    }
+    .amount-card-num,
+    .card-num {
+        font-family: Kaisei Decol;
+        font-size: 25px;
+        line-height: 28.96px;
+    }
+    .g-card-num {
+        font-size: 20px;
+    }
+    .g-card-txt {
+        font-size: 16px;
+    }
+    .cards {
+        gap: 0px;
+        justify-content: center !important;
+    }
+    .card-two {
+        justify-content: unset !important;
+        align-items: center !important;
+        padding-top: 5px;
+    }
+    .mid-text {
+        font-size: 12px !important;
+    }
+    .mid-text strong {
+        font-size: 10px !important;
+    }
+}
+@media only screen and (max-width: 319px) {
+    .trns-mid-txt .text-center {
+        font-size: 11px !important;
+    }
+    .mid-text strong {
+        font-size: 8px !important;
+    }
+}
+@media only screen and (max-width: 430px) {
+    .togle-card {
+        justify-content: unset !important;
+        align-items: center !important;
+        padding-top: 5px;
+    }
+}
