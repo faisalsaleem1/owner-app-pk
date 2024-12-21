@@ -1,1 +1,27 @@
-<p>login works!</p>
+<div class="d-flex align-items-center justify-content-center main-container">
+    <div class="d-flex flex-column w-100 login-container">
+        <div class="logo-img">
+            <img src="/assets/owner-logo.png" alt="main-logo" style="max-width: 220px;" class="mobile-img">
+        </div>
+        
+            <form [formGroup]="loginForm" class="mt-5 mt-lg-4 d-flex flex-column align-items-center justify-content-center gap-4 w-100">
+                <div class="w-100">
+                    <input type="text" formControlName="username" class="form-input" placeholder="Username">
+                    <div *ngIf="f.username.touched && f.username.errors" class="error">
+                        <div *ngIf="f.username.errors.required"><span class="error">
+                            user name is required.
+                            </span></div>
+                    </div>
+                </div>
+                <div class="w-100">
+                    <input type="password" formControlName="password" class="form-input" placeholder="Password">
+                    <div *ngIf="f.password.touched && f.password.errors" class="error">
+                        <span *ngIf="f.password.errors.required"> password is required.
+                        </span>
+                    </div>
+                </div>
+                <button class="submit-btn">Authenticate</button>
+            </form>
+        
+    </div>
+</div>
