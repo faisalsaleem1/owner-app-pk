@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { NgbAlertModule, NgbCalendar, NgbDatepickerModule, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { Component, EventEmitter, HostListener, Input, Output, ViewChild } from '@angular/core';
+import { NgbAlertModule, NgbCalendar, NgbDatepickerModule, NgbDateStruct, NgbInputDatepicker } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import moment from 'moment';
@@ -11,11 +11,37 @@ import moment from 'moment';
   styleUrl: './single-datepicker.component.scss'
 })
 export class SingleDatepickerComponent {
-  model!: NgbDateStruct;
-  @Input() start: Date | null = null;
-  @Input() end: Date | null = null;
+  @ViewChild("startDp") private startDp: NgbInputDatepicker | any;
+  @Output() startDateEmit = new EventEmitter<{ start: Date }>();
+  startModel!: NgbDateStruct;
+  endModel!: NgbDateStruct;
+  @Input() start: Date | any = null;
+  @Input() end: Date | any = null;
+  isStartOpen = false;
+  isEndOpen = false;
+
+  @HostListener("document:click", ["$event.target"])
+    onClick(element: any) {
+      const host = document.getElementById("startDatePicker");
+      if (this.startDp && this.isStartOpen && !this.isDescendant(host, element)) {
+        this.emit(true);
+      }
+    }
   constructor(private calender:NgbCalendar){
-    
+    this.start = this.start?.getDate()
+    this.end = this.end?.getDate()
+  }
+  private emit(close?: boolean) {
+    const date: any = {
+      start: this.start,
+    };
+
+    this.startDateEmit.emit(date);
+
+    if (close) {
+      this.isStartOpen = false;
+      this.startDp.close();
+    }
   }
   get startFormattedDateRange(): string {
     const startFormatted = moment(this.start).format("dddd, Do MMMM");
@@ -24,5 +50,27 @@ export class SingleDatepickerComponent {
   get endFormattedDateRange(): string {
   const endFormatted = moment(this.end).format("dddd, Do MMMM");
   return `${endFormatted} `;
+    }
+    private isDescendant(parent: any, child: any) {
+      let node = child;
+      while (node !== null) {
+        if (node === parent) {
+          return true;
+        } else {
+          node = node.parentNode;
+        }
+      }
+      return false;
+    }
+    toDate(dateStruct: NgbDateStruct): Date | null {
+      return dateStruct
+        ? new Date(dateStruct.year, dateStruct.month - 1, dateStruct.day)
+        : null;
+    }
+    onStartDateSelect(date: NgbDateStruct){
+      this.start = this.toDate(date);
+    }
+    onEndDateSelect(date: NgbDateStruct){
+      this.end = this.toDate(date);
     }
 }

@@ -4,3 +4,12 @@
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
 }
+.rotate-down {
+    transform: rotate(180deg); /* Rotates the arrow downwards */
+    transition: transform 0.3s ease;
+  }
+  
+  .rotate-up {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+  }
