@@ -7,3 +7,7 @@
 .left-sidebar{
     width: 332px;
 }
+.main-content{
+    overflow-y: auto;
+    height:calc(100vh - 170px);
+}
