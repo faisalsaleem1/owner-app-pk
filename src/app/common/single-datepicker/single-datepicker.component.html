@@ -4,17 +4,19 @@
             <div class="input-group">
                 <input
                     class="form-control"
+                    id="startDatePicker"
                     [placeholder]="startFormattedDateRange"
                     name="dp"
-                    [(ngModel)]="model"
+                    [(ngModel)]="startModel"
                     ngbDatepicker
                     #start="ngbDatepicker"
                     [value]="startFormattedDateRange"
+                    (dateSelect)="onStartDateSelect($event)"
                 />
                 <button class="toggle-btn">
                     <img src="/assets/dashboard/arrow-up.svg" alt="arrow-up"
-                     class="pointer"
-                    (click)="start.toggle()">
+                [ngClass]="{'rotate-up': isStartOpen, 'rotate-down': !isStartOpen}" class="pointer"
+                (click)="start.toggle(); isStartOpen = !isStartOpen">
                 </button>
             </div>
         </div>
@@ -22,17 +24,18 @@
             <div class="input-group">
                 <input
                     class="form-control"
-                    placeholder="yyyy-mm-dd"
+                    [placeholder]="endFormattedDateRange"
                     name="dp"
-                    [(ngModel)]="model"
+                    [(ngModel)]="endModel"
                     ngbDatepicker
                     #end="ngbDatepicker"
                     [value]="endFormattedDateRange"
+                    (dateSelect)="onEndDateSelect($event)"
                 />
                 <button class="toggle-btn">
                     <img src="/assets/dashboard/arrow-up.svg" alt="arrow-up"
-                     class="pointer"
-                    (click)="end.toggle()">
+                [ngClass]="{'rotate-up': isEndOpen, 'rotate-down': !isEndOpen}" class="pointer"
+                (click)="end.toggle(); isEndOpen = !isEndOpen">
                 </button>
             </div>
         </div>
