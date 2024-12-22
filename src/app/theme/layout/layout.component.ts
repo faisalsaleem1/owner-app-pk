@@ -2,10 +2,11 @@ import { Component } from "@angular/core";
 import { HomeComponent } from "../home/home.component";
 import { SidebarComponent } from "../../shared/sidebar/sidebar.component";
 import { RouterOutlet } from "@angular/router";
+import { HeaderComponent } from "../../common/header/header.component";
 
 @Component({
   selector: "app-layout",
-  imports: [SidebarComponent, RouterOutlet],
+  imports: [SidebarComponent, RouterOutlet, HeaderComponent],
   templateUrl: "./layout.component.html",
   styleUrl: "./layout.component.scss",
 })

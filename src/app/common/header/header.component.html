@@ -1,0 +1,16 @@
+<section class="header-section">
+  <div class="top-sec">
+    <p style="color: white;">Date-filter-1</p>
+    <p style="color: white;">Date-filter-2</p>
+  </div>
+  <div class="bottom-sec">
+    <div class="date-selection-filter">
+      <app-date-range-selection
+        [from]="defaultFrom"
+        [to]="defaultTo"
+        (dateRangeSelection)="onDateRangeSelection($event)"
+      >
+      </app-date-range-selection>
+    </div>
+  </div>
+</section>

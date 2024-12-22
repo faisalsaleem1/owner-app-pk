@@ -1,0 +1,28 @@
+<form class="form-inline">
+    <div class="form-group">
+        <div class="input-group" id="dateRangePicker">
+            <input class="form-control" id="dateRange" [placeholder]="placeholder" name="dp"
+                [value]="formattedDateRange" ngbDatepicker #dp="ngbDatepicker" (dateSelect)="onDateSelection($event)"
+                [displayMonths]="1" [dayTemplate]="t" [autoClose]="false" (click)="dp.toggle(); isOpen = !isOpen"
+                readonly />
+            <img src="/assets/dashboard/arrow-up.svg" alt="arrow-up"
+                [ngClass]="{'rotate-up': isOpen, 'rotate-down': !isOpen}" class="pointer"
+                (click)="dp.toggle(); isOpen = !isOpen">
+        </div>
+    </div>
+</form>
+
+<!-- Datepicker Day Template -->
+<ng-template #t let-date="date" let-focused="focused" class="position-relative">
+    <span class="custom-day" [class.focused]="focused"
+        [class.range]="isFrom(date) || isTo(date) || isInside(date) || isHovered(date)"
+        [class.faded]="isHovered(date) || isInside(date)" (mouseenter)="hoveredDate = toDate(date)"
+        (mouseleave)="hoveredDate = null">
+        {{ date.day }}
+    </span>
+    <!-- Footer with Apply and Cancel buttons -->
+    <div *ngIf="isOpen" class="date-picker-footer">
+        <button type="button" class="btn btn-secondary cancel-date" (click)="onCancel()">Cancel</button>
+        <button type="button" class="btn btn-primary choose-date text-nowrap" (click)="onChoose()">Choose Date</button>
+    </div>
+</ng-template>

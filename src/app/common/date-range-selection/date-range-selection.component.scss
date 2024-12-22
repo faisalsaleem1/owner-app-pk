@@ -1,0 +1,468 @@
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  display: inline-block;
+}
+.custom-day.focused {
+  background-color: slateblue;
+}
+.custom-day.range,
+.custom-day:hover {
+  background-color: slategray;
+  color: white;
+}
+.custom-day.faded {
+  background-color: #d1dfff !important;
+  border: 2px solid #1f5eff;
+  color: #1f5eff !important;
+  outline: none !important;
+}
+
+.form-group {
+  min-width: 14rem;
+  .input-group {
+    max-width: 100% !important;
+    align-items: center;
+    border-radius: 6px;
+  }
+}
+
+#dateRangePicker {
+  input.form-control {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+  }
+
+  i.material-icons {
+    position: absolute;
+    right: 0;
+    top: calc(50% - 12px);
+  }
+}
+//
+#dateRangePicker {
+  position: relative;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+  border: 1px #ededed solid;
+  border-radius: 6px;
+  background-color: white !important;
+  padding-right: 10px;
+  height: 45px;
+}
+
+.form-inline {
+  width: 91%;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+
+.date-picker-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0 !important;
+  width: 100%;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-top: none;
+  z-index: 1000;
+}
+
+.date-picker-footer .btn {
+  margin: 5px;
+}
+
+.choose-date {
+  width: 50%;
+  height: 50px;
+  border-radius: 10px !important;
+  font-size: 20px;
+}
+
+.cancel-date {
+  width: 50%;
+  height: 50px;
+  border-radius: 10px !important;
+  font-size: 20px;
+
+  background: #d9d9d9 !important;
+  border-radius: 10px !important;
+  border-color: #d9d9d9 !important;
+  color: #888888 !important;
+}
+
+.rotate-down {
+  transform: rotate(180deg); /* Rotates the arrow downwards */
+  transition: transform 0.3s ease;
+}
+
+.rotate-up {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+::ng-deep .custom-day {
+  background-color: #d9d9d9 !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 10px !important;
+}
+
+::ng-deep .faded {
+  color: black !important;
+}
+
+::ng-deep .range {
+  color: white !important;
+  background-color: #1f5eff !important;
+}
+
+::ng-deep .show {
+  width: 100%;
+  height: 510px;
+}
+
+::ng-deep ngb-datepicker-month {
+  display: flex !important;
+  flex-direction: column;
+  row-gap: 25px;
+}
+
+::ng-deep .btn-link {
+  color: #1e1e1e !important;
+}
+
+::ng-deep .ngb-dp-weekdays {
+  background-color: white !important;
+  border: 0 !important;
+  transform: translateY(10px);
+}
+
+::ng-deep .ngb-dp-weekday {
+  color: #c4c4c4 !important;
+  width: 40px !important;
+  height: 40px !important;
+  font-style: normal !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+::ng-deep .ngb-dp-content {
+  display: block !important;
+}
+
+::ng-deep .form-select {
+  background-color: transparent;
+  border: 0;
+  background-image: none !important;
+}
+
+::ng-deep .ngb-dp-arrow-btn {
+  margin-left: 25px !important;
+  margin-right: 25px !important;
+}
+
+::ng-deep .ngb-dp-header {
+  background-color: #ffffff !important;
+}
+
+::ng-deep .form-select:focus {
+  border: none !important;
+  box-shadow: none;
+  outline: none;
+}
+
+::ng-deep .ngb-dp-week {
+  justify-content: space-between;
+  padding-right: 25px !important;
+  padding-left: 25px !important;
+}
+
+::ng-deep ngb-datepicker-navigation {
+  background-color: transparent;
+  transform: translateY(6px);
+}
+// desktop
+@media only screen and (min-width: 1024px) {
+  ::ng-deep .ngb-dp-weekdays {
+    margin-bottom: 2px;
+  }
+  ::ng-deep .custom-day {
+    width: 35px !important;
+    height: 35px !important;
+    font-size: 14px;
+  }
+
+  ::ng-deep ngb-datepicker-month {
+    row-gap: 9px;
+  }
+
+  ::ng-deep .show {
+    width: 100%;
+    height: 415px;
+  }
+  #dateRange {
+    font-size: 15px !important;
+  }
+  .cancel-date {
+    font-size: 20px !important;
+    height: 45px !important;
+  }
+  .choose-date {
+    font-size: 20px !important;
+    height: 45px;
+  }
+
+  ::ng-deep .ngb-dp-week {
+    justify-content: space-between;
+    padding-right: 21px !important;
+    padding-left: 20px !important;
+  }
+}
+@media only screen and (min-width: 1160px) {
+  ::ng-deep .custom-day {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 20px;
+  }
+
+  ::ng-deep ngb-datepicker-month {
+    row-gap: 20px;
+  }
+
+  ::ng-deep .show {
+    width: 100%;
+    height: 510px;
+  }
+  .date-picker-footer {
+    padding: 20px;
+  }
+  ::ng-deep .ngb-dp-week {
+    padding-right: 30px !important;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  ::ng-deep .custom-day {
+    width: 45px !important;
+    height: 45px !important;
+  }
+  ::ng-deep .ngb-dp-week {
+    padding-right: 40px !important;
+    padding-left: 26px !important;
+  }
+  ::ng-deep ngb-datepicker-month {
+    row-gap: 18px;
+  }
+  .cancel-date {
+    font-size: 20px !important;
+    height: 50px !important;
+  }
+  .choose-date {
+    font-size: 20px !important;
+    height: 50px;
+  }
+  .date-picker-footer {
+    padding: 25px;
+  }
+}
+
+@media only screen and (min-width: 431px) {
+  #dateRange {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  ::ng-deep .ngb-dp-week {
+    padding-left: 20px !important;
+    padding-right: 25px !important;
+  }
+  ::ng-deep .ngb-dp-arrow {
+    width: 3rem !important;
+  }
+  ::ng-deep .custom-day {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 14px;
+  }
+  .date-picker-footer {
+    padding: 0px;
+  }
+
+  ::ng-deep .show {
+    height: 460px;
+  }
+
+  ::ng-deep ngb-datepicker-month {
+    row-gap: 14px;
+  }
+
+  ::ng-deep ngb-datepicker-month {
+    // padding-right: 15px;
+  }
+
+  .cancel-date {
+    font-size: 20px !important;
+    height: 50px !important;
+  }
+  .choose-date {
+    font-size: 20px !important;
+    height: 50px;
+  }
+
+  #dateRange {
+    font-size: 12px;
+  }
+  .date-picker-footer {
+    padding: 13px;
+  }
+}
+
+@media only screen and (max-width: 410px) {
+  ::ng-deep .custom-day {
+    width: 38px !important;
+    height: 38px !important;
+  }
+}
+@media only screen and (max-width: 390px) {
+  ::ng-deep .custom-day {
+    width: 35px !important;
+    height: 35px !important;
+  }
+  ::ng-deep ngb-datepicker-month {
+    row-gap: 15px;
+  }
+  .cancel-date {
+    font-size: 16px !important;
+    height: 50px !important;
+  }
+  .choose-date {
+    font-size: 16px !important;
+    height: 50px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  ::ng-deep .custom-day {
+    width: 33px !important;
+    height: 33px !important;
+  }
+  .cancel-date {
+    font-size: 14px !important;
+    height: 50px !important;
+  }
+  .choose-date {
+    font-size: 14px !important;
+    height: 50px;
+  }
+  ::ng-deep .ngb-dp-week {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  #dateRange {
+    font-size: 11px;
+  }
+}
+
+@media only screen and (max-width: 404px) {
+  #dateRange {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 378px) {
+  #dateRange {
+    font-size: 9px;
+  }
+}
+
+@media only screen and (max-width: 354px) {
+  #dateRange {
+    font-size: 8px;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  #dateRange {
+    font-size: 7px;
+  }
+  ::ng-deep .ngb-dp-week {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+
+@media only screen and (max-width: 295px) {
+  #dateRange {
+    font-size: 6px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  ::ng-deep .ngb-dp-arrow {
+    width: 3rem !important;
+  }
+  ::ng-deep .custom-day {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 10px;
+  }
+
+  ::ng-deep .show {
+    height: 400px;
+  }
+
+  ::ng-deep ngb-datepicker-month {
+    row-gap: 10px;
+  }
+
+  .cancel-date {
+    font-size: 14px !important;
+    height: 40px !important;
+  }
+  .choose-date {
+    font-size: 14px !important;
+    height: 40px;
+  }
+  .date-picker-footer {
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 306px) {
+  ::ng-deep .ngb-dp-week {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+  ::ng-deep .custom-day {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .cancel-date {
+    font-size: 12px !important;
+    height: 40px !important;
+  }
+  .choose-date {
+    font-size: 12px !important;
+    height: 40px;
+  }
+}
