@@ -441,3 +441,7 @@ section {
         padding-top: 5px;
     }
 }
+.main-dw-container{
+    overflow-y: auto;
+    height:calc(100vh - 230px);
+}
