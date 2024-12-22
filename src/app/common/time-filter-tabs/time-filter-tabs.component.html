@@ -1,0 +1,38 @@
+<section class="pb-2">
+    <div class="select-days">
+        <div class="main-buttons">
+            <button type="button" class="custom-btn" [ngClass]="{'active-btn': activeButtonIndex === 'today'}"
+                (click)="setActiveButton('today')">
+                Today
+            </button>
+            <button type="button" class="custom-btn" [ngClass]="{'active-btn': activeButtonIndex === 'yesterday'}"
+                (click)="setActiveButton('yesterday')">
+                Yesterday
+            </button>
+            <button type="button" class="custom-btn" [ngClass]="{'active-btn': activeButtonIndex === 'thisweek'}"
+                (click)="setActiveButton('thisweek')">
+                This Week
+            </button>
+            <button type="button" class="custom-btn" [ngClass]="{'active-btn': activeButtonIndex === 'lastweek'}"
+                (click)="setActiveButton('lastweek')">
+                Last Week
+            </button>
+            <button type="button" class="custom-btn" [ngClass]="{'active-btn': activeButtonIndex === 'thismonth'}"
+                (click)="setActiveButton('thismonth')">
+                This Month
+            </button>
+            <button type="button" class="custom-btn" [ngClass]="{'active-btn': activeButtonIndex === 'lastmonth'}"
+                (click)="setActiveButton('lastmonth')">
+                Last Month
+            </button>
+            <button type="button" class="custom-btn d-desk-none"
+                [ngClass]="{'active-btn': activeButtonIndex === 'thisyear'}" (click)="setActiveButton('thisyear')">
+                This Year
+            </button>
+            <button type="button" class="custom-btn d-desk-none"
+                [ngClass]="{'active-btn': activeButtonIndex === 'lastyear'}" (click)="setActiveButton('lastyear')">
+                Last Year
+            </button>
+        </div>
+    </div>
+</section>

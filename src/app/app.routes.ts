@@ -1,28 +1,46 @@
-import { Routes } from '@angular/router';
-import { DashboardComponent } from './theme/dashboard/dashboard.component';
-import { UserDetailsComponent } from './theme/components/user-details/user-details.component';
-import { LoginComponent } from './theme/auth/login/login.component';
-import { HomeComponent } from './theme/home/home.component';
-import { LayoutComponent } from './theme/layout/layout.component';
-import { DwReportComponent } from './theme/components/dw-report/dw-report.component';
+import { Routes } from "@angular/router";
+import { DashboardComponent } from "./theme/dashboard/dashboard.component";
+import { UserDetailsComponent } from "./theme/components/user-details/user-details.component";
+import { LoginComponent } from "./theme/auth/login/login.component";
+import { LayoutComponent } from "./theme/layout/layout.component";
+import { DwReportComponent } from "./theme/components/dw-report/dw-report.component";
+import { BetReportsComponent } from "./theme/components/bet-reports/bet-reports.component";
+import { PlReportsComponent } from "./theme/components/pl-reports/pl-reports.component";
 
 export const routes: Routes = [
   {
-      path: '',
-      component: LayoutComponent,
-      children: [
-          {
-            path: 'dw-report',
-            component: DwReportComponent,
-        },
-        {
-          path: 'user-detail',
-          component: UserDetailsComponent,
+    path: "",
+    component: LayoutComponent,
+    children: [
+      {
+        path: "",
+        redirectTo: "dashboard",
+        pathMatch: "full", // Ensures that only the exact empty path redirects
       },
-      ],
+      {
+        path: "dashboard",
+        component: DashboardComponent,
+      },
+      {
+        path: "user-detail",
+        component: UserDetailsComponent,
+      },
+      {
+        path: "bet-report",
+        component: BetReportsComponent,
+      },
+      {
+        path: "pl-report",
+        component: PlReportsComponent,
+      },
+      {
+        path: "dw-report",
+        component: DwReportComponent,
+      },
+    ],
   },
   {
-    path: 'login',
+    path: "login",
     component: LoginComponent,
-}
+  },
 ];

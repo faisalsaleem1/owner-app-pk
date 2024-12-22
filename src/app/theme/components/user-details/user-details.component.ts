@@ -10,39 +10,43 @@ import { Component } from '@angular/core';
 export class UserDetailsComponent {
 
   tableHeaderData: string[] = [
-    'Sports Name',
     'Company Name',
-    'Settle',
-    'Unsettle',
-    'Void',
-    'Rejected',
+    'Admins',
+    'W/L',
+    'Supers',
+    'Masters',
+    'Agents',
+    'Users',
   ];
 
   // Table content data
   tableContentData: any[] = [
     {
-      sportname: 'Cricket',
       companyName: 'T10Exchnage',
-      settle: '10',
-      unsettle: '10',
-      void: '10',
-      rejected:'10'
+      admins: 'Cricket',
+      wl: '10',
+      supers: '10',
+      masters: '10',
+      agents:'10',
+      users:'10'
     },
     {
-      sportname: 'Soccer',
       companyName: 'T10Exchnage',
-      settle: '10',
-      unsettle: '10',
-      void: '10',
-      rejected:'10'
+      admins: 'Cricket',
+      wl: '10',
+      supers: '10',
+      masters: '10',
+      agents:'10',
+      users:'10'
     },
     {
-      sportname: 'Tennis',
       companyName: 'T10Exchnage',
-      settle: '10',
-      unsettle: '10',
-      void: '10',
-      rejected:'10'
+      admins: 'Cricket',
+      wl: '10',
+      supers: '10',
+      masters: '10',
+      agents:'10',
+      users:'10'
     },
   ];
 

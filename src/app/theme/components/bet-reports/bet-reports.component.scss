@@ -1,0 +1,74 @@
+//
+//
+// For Desktop
+//
+//
+/* Card Styles */
+@media only screen and (min-width: 768px) {
+    .deskcontainer {
+        display: flex !important;
+    }
+}
+.deskcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.deskcard {
+    background-color: white; /* Card background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 0px;
+    width: 95%;
+}
+
+/* Table Styles */
+.responsive-table {
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Remove space between borders */
+}
+
+/* Table Header Styles */
+.responsive-table thead {
+    background-color: #000000; /* Light gray background for header */
+    border-bottom: 1px solid #ddd; /* Keep bottom border only */
+    color: #fff;
+}
+
+.responsive-table th,
+.responsive-table td {
+    text-align: center; /* Center align text */
+    padding: 10px; /* Add padding for aesthetics */
+    border: none; /* Remove all borders */
+}
+
+/* Header Text Style */
+.responsive-table th {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21.78px;
+    border-bottom: 1px solid #ddd; /* Bottom border under headings */
+}
+
+/* Body Text Style */
+.responsive-table td {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21.78px;
+    border-bottom: 1px solid #ddd; /* Bottom border under rows */
+}
+
+
+
+// 
+.responsive-table thead {
+    height: 56px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    text-transform: uppercase;
+  }
+
+//   

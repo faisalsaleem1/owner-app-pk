@@ -1,3 +1,4 @@
+<app-time-filter-tabs></app-time-filter-tabs>
 <!-- Desktop -->
 <div class="deskcontainer mt-4 d-none">
     <div class="deskcard">
@@ -18,13 +19,11 @@
                 trackBy: trackByIndex
               "
             >
+              <td>{{ data.sportsName }}</td>
               <td>{{ data.companyName }}</td>
-              <td>{{ data.admins }}</td>
-              <td>{{ data.wl }}</td>
-              <td>{{ data.supers }}</td>
-              <td>{{ data.masters }}</td>
-              <td>{{data.agents}}</td>
-              <td>{{data.users}}</td>
+              <td>{{ data.date1 }}</td>
+              <td>{{ data.date2 }}</td>
+              <td>{{ data.date3 }}</td>
             </tr>
           </tbody>
         </table>

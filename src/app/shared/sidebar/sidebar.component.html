@@ -7,7 +7,7 @@
     <!-- Sidebar items -->
     <div class="item-list d-flex justify-content-center gap-2 mt-4 flex-column">
         <!-- 1 -->
-        <div class="item d-flex justify-content-center align-items-center gap-2" routerLinkActive="active">
+        <div class="item d-flex justify-content-center align-items-center gap-2" [routerLink]="'/dashboard'" routerLinkActive="active">
             <img src="/assets/sidebar/dashboard.svg" alt="dashboard">
             <span class="text-white">DASHBOARD</span>
         </div>
@@ -17,12 +17,12 @@
             <span class="text-white">USER DETAILS</span>
         </div>
         <!-- 3 -->
-        <div class="item d-flex justify-content-center align-items-center gap-2" routerLinkActive="active">
+        <div class="item d-flex justify-content-center align-items-center gap-2" [routerLink]="'/bet-report'" routerLinkActive="active">
             <img src="/assets/sidebar/bet-profit.svg" alt="bet-report">
             <span class="text-white">BET REPORT</span>
         </div>
         <!-- 4 -->
-        <div class="item d-flex justify-content-center align-items-center gap-2" routerLinkActive="active">
+        <div class="item d-flex justify-content-center align-items-center gap-2"  [routerLink]="'/pl-report'" routerLinkActive="active">
             <img src="/assets/sidebar/p-l.svg" alt="pl-report">
             <span class="text-white">P&L REPORT</span>
         </div>
