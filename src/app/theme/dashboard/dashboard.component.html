@@ -1,4 +1,4 @@
-<section>
+<section class="pb-2">
 
     <div class="select-days">
         <div class="main-buttons">
@@ -40,12 +40,14 @@
 
     <!-- body -->
     <div class="pt-3 pb-3">
+            <router-outlet></router-outlet>
 
+<!-- 
         <ng-container *ngIf="activeButtonIndex === 'today'">
         <app-dw-report></app-dw-report>
     </ng-container>
     <ng-container *ngIf="activeButtonIndex === 'yesterday'">
         <app-user-details></app-user-details>
-    </ng-container>
+    </ng-container> -->
     </div>
 </section>

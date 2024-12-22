@@ -7,47 +7,47 @@
     <!-- Sidebar items -->
     <div class="item-list d-flex justify-content-center gap-2 mt-4 flex-column">
         <!-- 1 -->
-        <div class="item d-flex justify-content-center align-items-center gap-2 active">
+        <div class="item d-flex justify-content-center align-items-center gap-2" routerLinkActive="active">
             <img src="/assets/sidebar/dashboard.svg" alt="dashboard">
             <span class="text-white">DASHBOARD</span>
         </div>
         <!-- 2 -->
-        <div class="item btn-2 d-flex justify-content-center align-items-center gap-2">
+        <div class="item btn-2 d-flex justify-content-center align-items-center gap-2"  [routerLink]="'/user-detail'" routerLinkActive="active" >
             <img src="/assets/sidebar/user-details.svg" alt="user-details">
             <span class="text-white">USER DETAILS</span>
         </div>
         <!-- 3 -->
-        <div class="item d-flex justify-content-center align-items-center gap-2">
+        <div class="item d-flex justify-content-center align-items-center gap-2" routerLinkActive="active">
             <img src="/assets/sidebar/bet-profit.svg" alt="bet-report">
             <span class="text-white">BET REPORT</span>
         </div>
         <!-- 4 -->
-        <div class="item d-flex justify-content-center align-items-center gap-2">
+        <div class="item d-flex justify-content-center align-items-center gap-2" routerLinkActive="active">
             <img src="/assets/sidebar/p-l.svg" alt="pl-report">
             <span class="text-white">P&L REPORT</span>
         </div>
         <!-- 5 -->
-        <div class="item d-flex justify-content-center align-items-center gap-2">
+        <div class="item d-flex justify-content-center align-items-center gap-2" [routerLink]="'/dw-report'" routerLinkActive="active">
             <img src="/assets/sidebar/dw-report.svg" alt="dw-report">
             <span class="text-white">D/W REPORT</span>
         </div>
          <!-- 6 -->
-         <div class="item d-flex justify-content-center align-items-center gap-2">
+         <div class="item d-flex justify-content-center align-items-center gap-2" routerLinkActive="active">
             <img src="/assets/sidebar/panel.svg" alt="panel-report">
             <span class="text-white">PANEL REPORT</span>
         </div>
         <!-- 7 -->
-        <div class="item d-flex justify-content-center align-items-center gap-2">
+        <div class="item d-flex justify-content-center align-items-center gap-2" routerLinkActive="active">
             <img src="/assets/sidebar/staff-report.svg" alt="staff-report">
             <span class="text-white">STAFF REPORT</span>
         </div>
         <!-- 8 -->
-        <div class="item d-flex justify-content-center align-items-center gap-2">
+        <div class="item d-flex justify-content-center align-items-center gap-2" routerLinkActive="active">
             <img src="/assets/sidebar/password.svg" alt="staff-report">
             <span class="text-white">PASSWORD</span>
         </div>
         <!-- Logout -->
-        <div class="item logout d-flex justify-content-center align-items-center gap-2">
+        <div class="item logout d-flex justify-content-center align-items-center gap-2" [routerLink]="'/login'">
             <img src="/assets/sidebar/logout.svg" alt="staff-report">
             <span class="text-white">LOUGOUT</span>
         </div>
