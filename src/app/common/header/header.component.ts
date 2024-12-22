@@ -1,9 +1,10 @@
 import { Component } from "@angular/core";
 import { DateRangeSelectionComponent } from "../date-range-selection/date-range-selection.component";
+import { SingleDatepickerComponent } from "../single-datepicker/single-datepicker.component";
 
 @Component({
   selector: "app-header",
-  imports: [DateRangeSelectionComponent],
+  imports: [DateRangeSelectionComponent,SingleDatepickerComponent],
   templateUrl: "./header.component.html",
   styleUrl: "./header.component.scss",
 })
