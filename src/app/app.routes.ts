@@ -6,6 +6,7 @@ import { LayoutComponent } from "./theme/layout/layout.component";
 import { DwReportComponent } from "./theme/components/dw-report/dw-report.component";
 import { BetReportsComponent } from "./theme/components/bet-reports/bet-reports.component";
 import { PlReportsComponent } from "./theme/components/pl-reports/pl-reports.component";
+import { AuthGuard } from "./guards/auth.guard";
 
 export const routes: Routes = [
   {
@@ -20,22 +21,27 @@ export const routes: Routes = [
       {
         path: "dashboard",
         component: DashboardComponent,
+        canActivate: [AuthGuard],
       },
       {
         path: "user-detail",
         component: UserDetailsComponent,
+        canActivate: [AuthGuard],
       },
       {
         path: "bet-report",
         component: BetReportsComponent,
+        canActivate: [AuthGuard],
       },
       {
         path: "pl-report",
         component: PlReportsComponent,
+        canActivate: [AuthGuard],
       },
       {
         path: "dw-report",
         component: DwReportComponent,
+        canActivate: [AuthGuard],
       },
     ],
   },

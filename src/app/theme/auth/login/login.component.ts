@@ -45,7 +45,6 @@ export class LoginComponent {
         )
         .subscribe(
           (resp) => {
-            console.log(resp, "data");
             localStorage.setItem("token", resp.data.accessToken);
             const currentTime = new Date();
             const userDetails = {
