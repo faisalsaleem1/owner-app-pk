@@ -1,0 +1,42 @@
+<div class="ms-5 container">
+    <form class="row row-cols-sm-auto justify-content-center">
+        <div class="col-12" style="width: 24rem;">
+            <div class="input-group">
+                <input
+                    class="form-control"
+                    [placeholder]="startFormattedDateRange"
+                    name="dp"
+                    [(ngModel)]="model"
+                    ngbDatepicker
+                    #start="ngbDatepicker"
+                    [value]="startFormattedDateRange"
+                />
+                <button class="toggle-btn">
+                    <img src="/assets/dashboard/arrow-up.svg" alt="arrow-up"
+                     class="pointer"
+                    (click)="start.toggle()">
+                </button>
+            </div>
+        </div>
+        <div class="col-12" style="width: 24rem;">
+            <div class="input-group">
+                <input
+                    class="form-control"
+                    placeholder="yyyy-mm-dd"
+                    name="dp"
+                    [(ngModel)]="model"
+                    ngbDatepicker
+                    #end="ngbDatepicker"
+                    [value]="endFormattedDateRange"
+                />
+                <button class="toggle-btn">
+                    <img src="/assets/dashboard/arrow-up.svg" alt="arrow-up"
+                     class="pointer"
+                    (click)="end.toggle()">
+                </button>
+            </div>
+        </div>
+    </form>
+
+</div>
+
