@@ -4,7 +4,7 @@ import { TimeFilterTabsComponent } from '../../../common/time-filter-tabs/time-f
 
 @Component({
   selector: 'app-bet-reports',
-  imports: [NgFor,TimeFilterTabsComponent],
+  imports: [NgFor, TimeFilterTabsComponent],
   templateUrl: './bet-reports.component.html',
   styleUrl: './bet-reports.component.scss'
 })

@@ -4,7 +4,7 @@ import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-pl-reports',
-  imports: [NgFor,TimeFilterTabsComponent],
+  imports: [NgFor, TimeFilterTabsComponent],
   templateUrl: './pl-reports.component.html',
   styleUrl: './pl-reports.component.scss'
 })
