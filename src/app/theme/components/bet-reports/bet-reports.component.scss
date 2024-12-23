@@ -72,3 +72,25 @@
   }
 
 //   
+.bet-report-container{
+    height: 100%;
+    position: relative;
+}
+.total-report-count{
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    padding: 15px;
+    width: 95%;
+    background-color: #000000;
+    justify-content: space-between;
+    color: #fff;
+    border-radius: 10px;
+}
+.total-report-conatiner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
