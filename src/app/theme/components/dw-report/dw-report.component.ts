@@ -4,7 +4,7 @@ import { TimeFilterTabsComponent } from '../../../common/time-filter-tabs/time-f
 
 @Component({
   selector: 'app-dw-report',
-  imports: [NgClass,NgIf,TimeFilterTabsComponent],
+  imports: [NgClass, NgIf, TimeFilterTabsComponent],
   templateUrl: './dw-report.component.html',
   styleUrl: './dw-report.component.scss'
 })

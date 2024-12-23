@@ -7,3 +7,8 @@ body{
     font-family: "Lato", sans-serif;
     overflow: hidden;
 }
+@media only screen and (max-width:1023px){
+    .responsive-table th,.responsive-table td{
+        font-size: 14px !important;
+    }
+}

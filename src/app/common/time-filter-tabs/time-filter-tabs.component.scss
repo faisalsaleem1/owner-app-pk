@@ -65,7 +65,8 @@ section {
     .select-days {
         padding: 15px 22px 0px 22px;
         height: 100%;
-        width: 62.2%;
+        width: auto;
+        max-width: 100%;
     }
 
     .d-desk-none {
