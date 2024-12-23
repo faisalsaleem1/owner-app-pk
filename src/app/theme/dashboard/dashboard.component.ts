@@ -6,7 +6,7 @@ import { DateRangeSelectionComponent } from "../../common/date-range-selection/d
 
 @Component({
   selector: 'app-dashboard',
-  imports: [DwReportComponent, DateRangeSelectionComponent, TimeFilterTabsComponent],
+  imports: [DateRangeSelectionComponent, TimeFilterTabsComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
