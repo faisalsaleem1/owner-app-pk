@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { first } from 'rxjs';
 import { CONFIG } from '../../../../../config';
 import { NgIf } from '@angular/common';
+import { ApiService } from '../../../services/api.service';
 
 @Component({
   selector: 'app-password',
@@ -35,7 +36,7 @@ export class PasswordComponent {
     const confirmPassword = group.get('confirmPassword')?.value;
     return newPassword === confirmPassword ? null : { passwordMismatch: true };
   }
-
+  
   onSubmit(): void {
     if (this.passwordForm.valid) {
       console.log('Form submitted:', this.passwordForm.value);
@@ -60,12 +61,12 @@ export class PasswordComponent {
   // submitted: boolean = false;
   // isFormSubmitted: boolean = true;
 
-  // form: FormGroup = new FormGroup({
-  //   oldPassword: new FormControl(''),
-  //   password: new FormControl(''),
-  //   confirmPassword: new FormControl(''),
-  // });
-   constructor(private formBuilder: FormBuilder , private toaster: ToastrService) {
+  form: FormGroup = new FormGroup({
+    oldPassword: new FormControl(''),
+    password: new FormControl(''),
+    confirmPassword: new FormControl(''),
+  });
+   constructor(private formBuilder: FormBuilder , private toaster: ToastrService ,private apiService: ApiService,) {
     this.passwordForm = this.formBuilder.group(
       {
         oldPassword: ['', [Validators.required, Validators.minLength(6)]],
@@ -163,7 +164,7 @@ export class PasswordComponent {
   //     newPassword: this.form.value.password
   //   }
 
-  //   this.backendService.getAllRecordsByPost(CONFIG.changeAdminPassword, obj)
+  //   this.apiService.getchangePassword(CONFIG.changeAdminPassword)
   //     .pipe(first())
   //     .subscribe(
   //       (data: any) => {

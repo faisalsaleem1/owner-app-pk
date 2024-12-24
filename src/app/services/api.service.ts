@@ -12,4 +12,7 @@ export class ApiService {
   getUserReports(payload:any):Observable<any>{
     return this.http.post(CONFIG.getUserReport, payload);
   }
+  getchangePassword(payload:any):Observable<any>{
+    return this.http.post(CONFIG.changeAdminPassword, payload);
+  }
 }
