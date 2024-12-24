@@ -6,6 +6,7 @@ import { LayoutComponent } from "./theme/layout/layout.component";
 import { DwReportComponent } from "./theme/components/dw-report/dw-report.component";
 import { BetReportsComponent } from "./theme/components/bet-reports/bet-reports.component";
 import { PlReportsComponent } from "./theme/components/pl-reports/pl-reports.component";
+import { PasswordComponent } from "./theme/components/password/password.component";
 // import { AuthGuard } from "./guards/auth.guard";
 
 export const routes: Routes = [
@@ -41,6 +42,11 @@ export const routes: Routes = [
       {
         path: "dw-report",
         component: DwReportComponent,
+        // canActivate: [AuthGuard],
+      },
+      {
+        path: "change-password",
+        component: PasswordComponent,
         // canActivate: [AuthGuard],
       },
     ],
