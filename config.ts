@@ -6,4 +6,7 @@ export const CONFIG = {
   adminLogin: BASE_URL_API + "/v1/admin/adminLogin",
   logOutAdmin: BASE_URL_API + "/v1/admin/logOutAdmin",
   changeAdminPassword: BASE_URL_API + "/v1/admin/changeAdminPassword",
+  getUserReport: BASE_URL_API + "/v1/admin/usersReports",
+  getBetReport: BASE_URL_API + "/v1/admin/betReports",
+  getPlReport: BASE_URL_API + "/v1/admin/plReports",
 };

@@ -1,7 +1,7 @@
 <section class="header-section">
   <div class="top-sec">
     <div class="top-date-sec">
-      <app-single-datepicker></app-single-datepicker>
+        <app-single-datepicker (rangeDateEmit)="receiveSingleDateRanges($event)"></app-single-datepicker>
     </div>
     <div class="mbl-content" *ngIf="!isDesktop">
       <div class="logo">
