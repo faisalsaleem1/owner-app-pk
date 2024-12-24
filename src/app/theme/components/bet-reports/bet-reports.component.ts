@@ -33,22 +33,25 @@ export class BetReportsComponent {
 
   ngOnInit(): void {
     this.conditionhandler.getRangeData().subscribe((resp: any) => {
+      console.log(resp, "resp resp resp ");
       const { currentRoute, date } = resp;
       this.currentPath = currentRoute;
       const { from = null, to = null } = date || {};
-      const forStartDate = new Date(from);
-      this.startDate = forStartDate.toISOString();
-      const forEndDate = new Date(to);
-      this.endDate = forEndDate.toISOString();
+      this.startDate = from;
+      this.endDate = to;
+      if(this.startDate && this.endDate) this.getBetReport();
     });
-    this.getBetReport();
   }
 
   getBetReport() {
+    console.log(this.startDate, '11111111');
+    console.log(this.endDate, '222222222');
+    
     let payload = {
-      startDate: this.startDate,
-      endDate: this.endDate,
+      startDate: this.conditionhandler.getDateFormat(this.startDate),
+      endDate: this.conditionhandler.getDateFormat(this.endDate),
     };
+
     this.apiService.getBetReports(payload).subscribe((apiResp) => {
       this.tableContentData = apiResp.data;
     });
