@@ -9,12 +9,15 @@ import {
   ViewChild,
 } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { NavigationEnd, Router } from "@angular/router";
 import {
   NgbDateStruct,
   NgbInputDatepicker,
   NgbDatepickerModule,
 } from "@ng-bootstrap/ng-bootstrap";
 import moment from "moment";
+import { ApiService } from "../../services/api.service";
+import { ConditionhandlerService } from "../../services/conditionhandler.service";
 
 @Component({
   selector: "app-date-range-selection",
@@ -32,10 +35,14 @@ export class DateRangeSelectionComponent implements OnInit {
   @Input() from: Date | null = null;
   @Input() to: Date | null = null;
   @Input() placeholder = "starting today";
-  @Output() dateRangeSelection = new EventEmitter<{ from: Date; to: Date }>();
+  currentRoute!:string;
+
+  @Output() dateRangeSelection = new EventEmitter<{ date:{from: Date; to: Date},currentRoute:string }>();
 
   hoveredDate: Date | null = null;
   isOpen = false;
+
+  
 
   @HostListener("document:click", ["$event.target"])
   onClick(element: any) {
@@ -58,15 +65,37 @@ export class DateRangeSelectionComponent implements OnInit {
       : `${fromFormatted}`;
   }
 
-  constructor() {}
+  constructor(private router:Router, private conditionhandler: ConditionhandlerService) {
+    
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.currentRoute = this.router.url;
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.currentRoute = event.urlAfterRedirects;
+      }
+    });
+    const dateRange: any = {
+      date:{
+        from: Date.now(),
+        to: Date.now(),
+      },
+      currentRoute: this.currentRoute
+    };
+    this.conditionhandler.setRangeData(dateRange)
+  }
 
   private emit(close?: boolean) {
     const dateRange: any = {
-      from: this.from,
-      to: this.to,
+      date:{
+        from: this.from,
+        to: this.to,
+      },
+      currentRoute: this.currentRoute
     };
+
+    this.conditionhandler.setRangeData(dateRange)
 
     this.dateRangeSelection.emit(dateRange);
 
