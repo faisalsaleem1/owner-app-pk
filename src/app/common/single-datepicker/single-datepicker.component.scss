@@ -28,4 +28,6 @@
       width: 24rem;
     }
   }
-
+::ng-deep.ngb-dp-day .bg-primary{
+  background-color: red !important;
+}
