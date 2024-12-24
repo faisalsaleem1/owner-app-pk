@@ -33,25 +33,20 @@ export class UserDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.conditionhandler.getRangeData().subscribe((resp: any) => {
-      console.log(resp)
+      console.log(resp, "resp resp resp ");
       const { currentRoute, date } = resp;
       this.currentPath = currentRoute;
       const { from = null, to = null } = date || {};
-      const forStartDate = new Date(from);
-      console.log(forStartDate)
-      this.startDate = forStartDate;
-      console.log(this.startDate)
-      const forEndDate = new Date(to);
-      this.endDate = forEndDate;
-      console.log(this.startDate, this.endDate)
+      this.startDate = from;
+      this.endDate = to;
     });
     this.getUsersReport();
   }
 
   getUsersReport() {
     let payload = {
-      startDate: this.conditionhandler.getStartDate(this.startDate),
-      endDate: this.conditionhandler.getEndDate(this.endDate),
+      startDate: this.conditionhandler.getDateFormat(this.startDate),
+      endDate: this.conditionhandler.getDateFormat(this.endDate),
     };
     this.apiService.getUserReports(payload).subscribe((apiResp) => {
       this.tableContentData = apiResp.data;
