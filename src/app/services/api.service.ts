@@ -12,4 +12,10 @@ export class ApiService {
   getUserReports(payload:any):Observable<any>{
     return this.http.post(CONFIG.getUserReport, payload);
   }
+  getBetReports(payload:any):Observable<any>{
+    return this.http.post(CONFIG.getBetReport, payload)
+  }
+  getPlReports(payload:any):Observable<any>{
+    return this.http.post(CONFIG.getPlReport, payload)
+  }
 }
