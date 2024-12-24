@@ -466,3 +466,19 @@ input:focus {
     height: 40px;
   }
 }
+
+@media only screen and (max-width:340px){
+  .form-group {
+    min-width: 13rem;
+  }
+}
+@media only screen and (max-width:320px){
+  .form-group {
+    min-width: 11rem;
+  }
+}
+@media only screen and (max-width:290px){
+  .form-group {
+    min-width: 10rem;
+  }
+}
