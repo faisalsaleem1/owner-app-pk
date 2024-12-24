@@ -3,6 +3,22 @@
     <div class="top-date-sec">
       <app-single-datepicker></app-single-datepicker>
     </div>
+    <div class="mbl-content" *ngIf="!isDesktop">
+      <div class="logo">
+        <img src="/assets/sidebar/logo.svg" alt="logo" class="logo">
+      </div>
+      <!-- <div class="date-selection-filter">
+        <ng-container *ngIf="!isDesktop">
+          <app-date-range-selection
+          [from]="defaultFrom"
+          [to]="defaultTo"
+          (dateRangeSelection)="onDateRangeSelection($event)"
+        >
+        </app-date-range-selection>
+        </ng-container>
+      </div> -->
+    </div>
+
   </div>
   <div class="bottom-sec">
     <div class="date-selection-filter" *ngIf="isDesktop">
