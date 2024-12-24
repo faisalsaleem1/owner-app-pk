@@ -39,11 +39,14 @@ export class UserDetailsComponent implements OnInit {
       const { from = null, to = null } = date || {};
       this.startDate = from;
       this.endDate = to;
+      if(this.startDate && this.endDate) this.getUsersReport();
     });
-    this.getUsersReport();
   }
 
   getUsersReport() {
+    console.log(this.startDate, '11111111');
+    console.log(this.endDate, '222222222');
+    
     let payload = {
       startDate: this.conditionhandler.getDateFormat(this.startDate),
       endDate: this.conditionhandler.getDateFormat(this.endDate),
