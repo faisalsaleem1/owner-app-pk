@@ -39,8 +39,8 @@ export class UserDetailsComponent implements OnInit {
       const { from = null, to = null } = date || {};
       this.startDate = from;
       this.endDate = to;
+      if(this.startDate && this.endDate) this.getUsersReport();
     });
-    this.getUsersReport();
   }
 
   getUsersReport() {
