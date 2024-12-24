@@ -10,6 +10,6 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getUserReports(date:any):Observable<any>{
-    return this.http.get(CONFIG.getUserReport, date)
+    return this.http.post(CONFIG.getUserReport, date)
   }
 }

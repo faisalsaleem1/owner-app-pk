@@ -12,11 +12,15 @@ import { ConditionhandlerService } from '../../../services/conditionhandler.serv
 export class UserDetailsComponent implements OnInit{
   usersReport:any=[];
   res={}
+  startDate:any;
+  endDate:any;
   constructor(private apiService : ApiService, private conditionhandler: ConditionhandlerService){}
 
   ngOnInit(): void {
     this.conditionhandler.getRangeData().subscribe((data)=>{
-      this.res=data
+      this.res=data;
+      console.log(this.res, 'this.res');
+      
     })
     this.getUsersReport()
   }
