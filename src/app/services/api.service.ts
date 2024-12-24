@@ -9,7 +9,7 @@ import { CONFIG } from "../../../config";
 export class ApiService {
   constructor(private http: HttpClient) {}
 
-  getUserReports(date:any):Observable<any>{
-    return this.http.post(CONFIG.getUserReport, date)
+  getUserReports(payload:any):Observable<any>{
+    return this.http.post(CONFIG.getUserReport, payload);
   }
 }
