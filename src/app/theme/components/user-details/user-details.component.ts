@@ -16,6 +16,16 @@ export class UserDetailsComponent implements OnInit {
   currentPath: any;
   tableContentData: any[] | any;
 
+  tableHeaderData: string[] = [
+    "Company Name",
+    "Admins",
+    "W/L",
+    "Supers",
+    "Masters",
+    "Agents",
+    "Users",
+  ];
+
   constructor(
     private apiService: ApiService,
     private conditionhandler: ConditionhandlerService
@@ -43,47 +53,6 @@ export class UserDetailsComponent implements OnInit {
       this.tableContentData = apiResp.data;
     });
   }
-
-  tableHeaderData: string[] = [
-    "Company Name",
-    "Admins",
-    "W/L",
-    "Supers",
-    "Masters",
-    "Agents",
-    "Users",
-  ];
-
-  // Table content data
-  // tableContentData: any[] = [
-  //   {
-  //     companyName: "T10Exchnage",
-  //     admins: "Cricket",
-  //     wl: "10",
-  //     supers: "10",
-  //     masters: "10",
-  //     agents: "10",
-  //     users: "10",
-  //   },
-  //   {
-  //     companyName: "T10Exchnage",
-  //     admins: "Cricket",
-  //     wl: "10",
-  //     supers: "10",
-  //     masters: "10",
-  //     agents: "10",
-  //     users: "10",
-  //   },
-  //   {
-  //     companyName: "T10Exchnage",
-  //     admins: "Cricket",
-  //     wl: "10",
-  //     supers: "10",
-  //     masters: "10",
-  //     agents: "10",
-  //     users: "10",
-  //   },
-  // ];
 
   trackByIndex(index: number): number {
     return index;
