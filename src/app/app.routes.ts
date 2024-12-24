@@ -26,22 +26,22 @@ export const routes: Routes = [
       {
         path: "user-detail",
         component: UserDetailsComponent,
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
       },
       {
         path: "bet-report",
         component: BetReportsComponent,
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
       },
       {
         path: "pl-report",
         component: PlReportsComponent,
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
       },
       {
         path: "dw-report",
         component: DwReportComponent,
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
       },
     ],
   },
