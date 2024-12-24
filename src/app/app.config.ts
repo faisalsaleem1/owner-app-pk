@@ -6,9 +6,9 @@ import {
 import { provideRouter } from "@angular/router";
 
 import { routes } from "./app.routes";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { BrowserAnimationsModule, provideAnimations } from "@angular/platform-browser/animations";
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
-import { ToastrModule } from "ngx-toastr";
+import { provideToastr, ToastrModule } from "ngx-toastr";
 import { JWTInterceptor } from "./interceptor/jwt.interceptor";
 
 export const appConfig: ApplicationConfig = {
@@ -20,6 +20,8 @@ export const appConfig: ApplicationConfig = {
       HttpClientModule,
       ToastrModule.forRoot({ maxOpened: 1, autoDismiss: true, easeTime: 100 })
     ),
+    provideToastr(),
+    provideAnimations(),
     { provide: HTTP_INTERCEPTORS, useClass: JWTInterceptor, multi: true },
   ],
 };
