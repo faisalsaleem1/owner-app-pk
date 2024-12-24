@@ -1,33 +1,44 @@
-<app-time-filter-tabs></app-time-filter-tabs>
-<!-- Desktop -->
-<div class="deskcontainer mt-4 d-none">
-    <div class="deskcard">
-      <div class="card-body">
-        <table class="responsive-table">
-          <thead>
-            <tr>
-              <th *ngFor="let item of tableHeaderData; trackBy: trackByIndex">
-                {{ item }}
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              *ngFor="
-                let data of tableContentData;
-                let i = index;
-                trackBy: trackByIndex
-              "
-            >
-              <td>{{ data.sportsName }}</td>
-              <td>{{ data.companyName }}</td>
-              <td>{{ data.settle }}</td>
-              <td>{{ data.unSettle }}</td>
-              <td>{{ data.viod }}</td>
-              <td>{{data.rejected}}</td>
-            </tr>
-          </tbody>
-        </table>
+<div class="bet-report-container">
+  <app-time-filter-tabs></app-time-filter-tabs>
+  <!-- Desktop -->
+  <div class="deskcontainer mt-4">
+      <div class="deskcard">
+        <div class="card-body">
+          <table class="responsive-table">
+            <thead>
+              <tr>
+                <th *ngFor="let item of tableHeaderData; trackBy: trackByIndex">
+                  {{ item }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="
+                  let data of tableContentData;
+                  let i = index;
+                  trackBy: trackByIndex
+                "
+              >
+                <td>{{ data.sportsName }}</td>
+                <td>{{ data.companyName }}</td>
+                <td>{{ data.settle }}</td>
+                <td>{{ data.unSettle }}</td>
+                <td>{{ data.viod }}</td>
+                <td>{{data.rejected}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
+  </div>
+  <div class="total-report-conatiner">
+    <div class="total-report-count">
+      <span>Total</span>
+      <span>30</span>
+      <span></span>
     </div>
+
+  </div>
 </div>
+

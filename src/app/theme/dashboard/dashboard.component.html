@@ -1,1 +1,15 @@
 <app-time-filter-tabs></app-time-filter-tabs>
+
+<div class="dashboard-main-container d-none">
+    <section>
+        <!-- date piker -->
+        <div class="px-3 py-2 date-selection-filter">
+            <app-date-range-selection
+            [from]="defaultFrom"
+            [to]="defaultTo"
+            (dateRangeSelection)="onDateRangeSelection($event)"
+          >
+          </app-date-range-selection>
+        </div>
+    </section>
+</div>
