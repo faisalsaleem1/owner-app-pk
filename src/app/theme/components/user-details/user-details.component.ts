@@ -44,6 +44,9 @@ export class UserDetailsComponent implements OnInit {
   }
 
   getUsersReport() {
+    console.log(this.startDate, '11111111');
+    console.log(this.endDate, '222222222');
+    
     let payload = {
       startDate: this.conditionhandler.getDateFormat(this.startDate),
       endDate: this.conditionhandler.getDateFormat(this.endDate),
