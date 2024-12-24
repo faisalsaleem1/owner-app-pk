@@ -15,7 +15,7 @@ export class DashboardComponent {
   defaultFrom = new Date();
   defaultTo = new Date(this.defaultFrom.getTime() + 0 * 24 * 60 * 60 * 1000);
 
-  public onDateRangeSelection(range: { from: Date; to: Date }) {
-    console.log(`Selected range: ${range.from} - ${range.to}`);
+  public onDateRangeSelection(data:any) {
+    console.log(data)
   }
 }
