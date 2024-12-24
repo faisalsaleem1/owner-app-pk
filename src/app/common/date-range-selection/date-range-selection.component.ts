@@ -78,8 +78,8 @@ export class DateRangeSelectionComponent implements OnInit {
     });
     const dateRange: any = {
       date:{
-        from: Date.now(),
-        to: Date.now(),
+        from: new Date(),
+        to: new Date(),
       },
       currentRoute: this.currentRoute
     };
