@@ -9,4 +9,5 @@ export const CONFIG = {
   getUserReport: BASE_URL_API + "/v1/admin/usersReports",
   getBetReport: BASE_URL_API + "/v1/admin/betReports",
   getPlReport: BASE_URL_API + "/v1/admin/plReports",
+  compareUsersReports: BASE_URL_API + "/v1/admin/compareUsersReports",
 };
