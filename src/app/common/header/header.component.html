@@ -30,7 +30,7 @@
       </app-date-range-selection>
     </div>
     <div class="diff-container">
-        <div class="diff-btn" *ngIf="isDesktop && currentRoute == '/user-detail'">
+        <div class="diff-btn" *ngIf="isDesktop && currentRoute == '/user-detail'" (click)="findDiffrence()">
             <span>Difference</span>
         </div>
     </div>

@@ -21,4 +21,7 @@ export class ApiService {
   getchangePassword(payload:any):Observable<any>{
     return this.http.post(CONFIG.changeAdminPassword, payload);
   }
+  getCompareUsersReports(payload?:any):Observable<any>{
+    return this.http.post(CONFIG.compareUsersReports, payload);
+  }
 }
