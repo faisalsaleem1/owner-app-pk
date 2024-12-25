@@ -2,7 +2,7 @@ import { Component, OnInit, effect } from "@angular/core";
 import { DateRangeSelectionComponent } from "../date-range-selection/date-range-selection.component";
 import { SingleDatepickerComponent } from "../single-datepicker/single-datepicker.component";
 import { NgClass, NgIf } from "@angular/common";
-import { Router, RouterLink, RouterLinkActive } from "@angular/router";
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
 import { ConditionhandlerService } from "../../services/conditionhandler.service";
 
@@ -16,6 +16,7 @@ import { ConditionhandlerService } from "../../services/conditionhandler.service
 export class HeaderComponent implements OnInit{
   header2Active: string = "dashboard";
   isDesktop: any;
+  currentRoute: any;
 
   constructor(
     private router:Router,
@@ -32,6 +33,12 @@ export class HeaderComponent implements OnInit{
       } else {
         this.isDesktop = true;
         console.log(this.isDesktop,'this.isDesktop22');
+      }
+    });
+    this.currentRoute = this.router.url;
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.currentRoute = event.url;
       }
     });
   }
