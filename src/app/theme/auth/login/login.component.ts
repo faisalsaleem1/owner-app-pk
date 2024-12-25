@@ -40,7 +40,7 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.auth
         .login(
-          this.loginForm.get("username")?.value,
+          this.loginForm.get("username")?.value.toLowerCase(),
           this.loginForm.get("password")?.value
         )
         .subscribe(

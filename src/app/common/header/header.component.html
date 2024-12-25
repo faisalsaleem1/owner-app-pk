@@ -1,6 +1,6 @@
 <section class="header-section">
   <div class="top-sec">
-    <div class="top-date-sec">
+    <div class="top-date-sec" *ngIf="currentRoute !== '/user-detail'" >
         <app-single-datepicker (rangeDateEmit)="receiveSingleDateRanges($event)"></app-single-datepicker>
     </div>
     <div class="mbl-content" *ngIf="!isDesktop">
@@ -21,7 +21,7 @@
 
   </div>
   <div class="bottom-sec">
-    <div class="date-selection-filter" *ngIf="isDesktop">
+    <div class="date-selection-filter" *ngIf="isDesktop && currentRoute !== '/user-detail'">
       <app-date-range-selection
         [from]="defaultFrom"
         [to]="defaultTo"
@@ -29,7 +29,11 @@
       >
       </app-date-range-selection>
     </div>
-
+    <div class="diff-container">
+        <div class="diff-btn" *ngIf="isDesktop && currentRoute == '/user-detail'">
+            <span>Difference</span>
+        </div>
+    </div>
     <!-- 2nd header -->
     <div class="header-2nd d-none">
       <div class="item-list d-flex justify-content-center gap-2">
