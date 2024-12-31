@@ -1,44 +1,73 @@
-<div class="bet-report-container">
-  <app-time-filter-tabs></app-time-filter-tabs>
-  <!-- Desktop -->
-  <div class="deskcontainer mt-4">
-      <div class="deskcard">
-        <div class="card-body">
-          <table class="responsive-table">
-            <thead>
-              <tr>
-                <th *ngFor="let item of tableHeaderData; trackBy: trackByIndex">
-                  {{ item }}
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr
-                *ngFor="
-                  let data of tableContentData;
-                  let i = index;
-                  trackBy: trackByIndex
-                "
-              >
-                <td>{{ data.sportName }}</td>
-                <td>{{ data.companyName }}</td>
-                <td>{{ data.settle }}</td>
-                <td>{{ data.unsettle }}</td>
-                <td>{{ data.void }}</td>
-                <td>{{data.rejected}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-  </div>
-  <div class="total-report-conatiner">
-    <div class="total-report-count">
-      <span>Total</span>
-      <span>30</span>
-      <span></span>
-    </div>
+<div
+  class="bet-report-container mb-3"
+  [ngClass]="{ 'no-length-con': tableContentData?.length <= 0 }"
+>
 
+<div class="filter-container">
+  <div class="filter-time-con">
+    <app-time-filter-tabs></app-time-filter-tabs>
+  </div>
+  <div class="search-bar-container">
+    <input
+     name="search"
+      type="text"
+      [(ngModel)]="searchQuery"
+      (input)="filterTable()"
+      class="custom-search-bar"
+      placeholder="Search here..."
+    />
+    <i class="search-icon"></i>
   </div>
 </div>
-
+  
+  <!-- Desktop -->
+  <div class="deskcontainer mt-4">
+    <div class="deskcard">
+      <div class="card-body">
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th *ngFor="let item of tableHeaderData; trackBy: trackByIndex">
+                {{ item }}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let data of tableContentData;
+                let i = index;
+                trackBy: trackByIndex
+              "
+            >
+              <td>{{ data.sportName }}</td>
+              <td>{{ data.companyName }}</td>
+              <!-- <td>{{ data.settle }}</td>
+              <td>{{ data.unsettle }}</td>
+              <td>{{ data.void }}</td>
+              <td>{{ data.rejected }}</td> -->
+              <td>{{ data.settleBets }}</td>
+              <td>{{ data.settleBetsStake }}</td>
+              <td>{{ data.voidBets }}</td>
+              <td>{{ data.voidBetsStake }}</td>
+              <td>{{ data.sportId }}</td>
+              <td>{{ data.createdAt }}</td>
+              <td>{{ data.updatedAt }}</td>
+              <td>{{ data.startDate }}</td>
+              <td>{{ data.endDate }}</td>
+              <td>{{ data.environment }}</td>
+              <td>{{ data.marketType }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- <div class="total-report-conatiner">
+      <div class="total-report-count">
+        <span>Total</span>
+        <span>{{ tableContentData?.length }}</span>
+        <span></span>
+      </div>
+    </div> -->
+  </div>
+</div>

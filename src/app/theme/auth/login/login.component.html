@@ -6,7 +6,7 @@
         
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="mt-5 mt-lg-4 d-flex flex-column align-items-center justify-content-center gap-4 w-100">
                 <div class="w-100">
-                    <input type="text" formControlName="username" class="form-input" placeholder="Username">
+                    <input type="text" formControlName="username" autocomplete="off" name="username" class="form-input" placeholder="Username">
                     <div *ngIf="f.username.touched && f.username.errors" class="error">
                         <div *ngIf="f.username.errors.required"><span class="error">
                             user name is required.
@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="w-100">
-                    <input type="password" formControlName="password" class="form-input" placeholder="Password">
+                    <input type="password" formControlName="password"  name="password" class="form-input" placeholder="Password">
                     <div *ngIf="f.password.touched && f.password.errors" class="error">
                         <span *ngIf="f.password.errors.required"> password is required.
                         </span>

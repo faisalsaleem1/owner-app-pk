@@ -5,6 +5,9 @@
     overflow-y: auto;
     height:calc(100vh - 170px);
 }
+.isIphoneSafari{
+    height: calc(100vh - 230px);
+}
 .dashboard{
     width: 100%;
 }

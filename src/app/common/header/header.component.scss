@@ -168,3 +168,77 @@ span {
   padding-right: 20px;
   text-transform: uppercase;
 }
+.refresh-btn{
+background: linear-gradient(175deg, #FF0000 0%, #490000 100%);
+color: #fff;
+}
+.refresh-btn span {
+  color: #fff;
+}
+@media only screen and (max-width:768px){
+  .diff-btn {
+    width: 163px;
+    height: 44px;
+  }
+  .diff-btn span {
+    font-size: 14px;
+  }
+  .diff-container {
+    padding-right: 7px;
+    position: relative;
+    top: 20px;
+  }
+}
+@media only screen and (max-width:530px){
+  .diff-btn {
+    width: 145px;
+    height: 44px;
+  }
+}
+@media only screen and (max-width:430px){
+  .diff-btn {
+    width: 125px;
+    height: 40px;
+    border-radius: 16px;
+  }
+  .diff-btn span {
+    font-size: 12px;
+  }
+  svg{
+    width: 17px;
+    height: 17px;
+  }
+}
+@media only screen and (max-width:375px){
+  .diff-btn {
+    width: 110px;
+  }
+  .diff-btn span {
+    font-size: 10px;
+  }
+  svg{
+    width: 16px;
+    height: 16px;
+  }
+}
+@media only screen and (max-width:350px){
+  .diff-btn {
+    width: 90px;
+  }
+  svg{
+    width: 14px;
+    height: 14px;
+  }
+}
+@media only screen and (max-width:319px){
+  .diff-btn {
+    width: 80px;
+  }
+  .diff-btn span {
+    font-size: 8px;
+  }
+  svg{
+    width: 12px;
+    height: 12px;
+  }
+}
