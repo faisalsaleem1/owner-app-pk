@@ -5,7 +5,7 @@ aside {
     overflow-y: auto;
 }
 
-.logo {
+.logo-main svg{
     width: 100px;
     height: 100px;
 }
@@ -40,7 +40,7 @@ span {
   }
 
 @media screen and (min-width:767px) {
-    .logo {
+    .logo-main svg{
         width: 140px;
         height: 140px;
     }
@@ -48,4 +48,16 @@ span {
     .item span {
         font-size: 14px;
     }
+}
+.item,
+.item-list,
+.logo-main{
+    display: flex;
+    justify-content: center;
+}
+.item{
+    align-items: center;
+}
+.item-list{
+    flex-direction: column;
 }
