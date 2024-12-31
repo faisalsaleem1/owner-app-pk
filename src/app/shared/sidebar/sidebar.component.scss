@@ -5,7 +5,7 @@ aside {
     overflow-y: auto;
 }
 
-.logo-main svg{
+.logo {
     width: 100px;
     height: 100px;
 }
@@ -40,7 +40,7 @@ span {
   }
 
 @media screen and (min-width:767px) {
-    .logo-main svg{
+    .logo {
         width: 140px;
         height: 140px;
     }
