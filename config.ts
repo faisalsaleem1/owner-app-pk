@@ -1,5 +1,5 @@
-export const BASE_URL_API = "";
-// export const BASE_URL_API = "http://101.0.20.132:3045";
+// export const BASE_URL_API = "";
+export const BASE_URL_API = "http://101.0.20.132:3045";
 
 export const CONFIG = {
   adminLogin: BASE_URL_API + "/v1/admin/adminLogin",
