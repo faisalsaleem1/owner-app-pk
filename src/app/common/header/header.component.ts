@@ -11,6 +11,7 @@ import {
 import { ToastrService } from "ngx-toastr";
 import { ConditionhandlerService } from "../../services/conditionhandler.service";
 import { ApiService } from "../../services/api.service";
+import { AuthService } from "../../services/auth.service";
 
 @Component({
   selector: "app-header",
@@ -33,7 +34,8 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private toastr: ToastrService,
     private conditionHandlerService: ConditionhandlerService,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private auth: AuthService
   ) {}
   ngOnInit(): void {
     this.conditionHandlerService.getInnerWidth().subscribe((resp: any) => {
@@ -64,8 +66,16 @@ export class HeaderComponent implements OnInit {
   }
 
   findDiffrence() {
-    this.apiService.getCompareUsersReports().subscribe((resp:any)=>{
-        console.log(resp, 'getCompareUsersReports ');
+    this.conditionHandlerService.setFindUserDiffrence(true);
+  }
+
+  refreshDiffrence() {
+    this.conditionHandlerService.setRefreshDiffrence(true);
+  }
+  logout() {
+    this.auth.logout().subscribe((resp) => {
+      if (resp.meta.statusCode === 200) localStorage.clear();
+      this.router.navigate(["/login"]);
     });
   }
 }

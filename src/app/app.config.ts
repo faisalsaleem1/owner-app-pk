@@ -10,6 +10,7 @@ import { BrowserAnimationsModule, provideAnimations } from "@angular/platform-br
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { provideToastr, ToastrModule } from "ngx-toastr";
 import { JWTInterceptor } from "./interceptor/jwt.interceptor";
+import { DataTablesModule } from "angular-datatables";
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,7 +19,8 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(
       BrowserAnimationsModule,
       HttpClientModule,
-      ToastrModule.forRoot({ maxOpened: 1, autoDismiss: true, easeTime: 100 })
+      ToastrModule.forRoot({ maxOpened: 1, autoDismiss: true, easeTime: 100 }),
+      DataTablesModule
     ),
     provideToastr(),
     provideAnimations(),

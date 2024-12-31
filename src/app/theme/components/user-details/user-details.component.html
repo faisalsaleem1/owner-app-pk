@@ -1,3 +1,4 @@
+<div class="bet-report-container mb-3" [ngClass]="{'no-length-con': tableContentData?.length <= 0}">
 <!-- Desktop -->
 <div class="deskcontainer mt-4">
     <div class="deskcard">
@@ -30,4 +31,12 @@
         </table>
       </div>
     </div>
+    <!-- <div class="total-report-conatiner">
+      <div class="total-report-count">
+        <span>Total</span>
+        <span>{{tableContentData?.length ? tableContentData.length - 1 : 0}}</span>
+        <span></span>
+      </div>
+    </div> -->
+</div>
 </div>

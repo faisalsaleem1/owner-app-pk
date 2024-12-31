@@ -13,6 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 .deskcard {
     background-color: white; /* Card background */
@@ -60,9 +61,6 @@
     border-bottom: 1px solid #ddd; /* Bottom border under rows */
 }
 
-
-
-// 
 .responsive-table thead {
     height: 56px;
     background-color: black;
@@ -71,9 +69,16 @@
     text-transform: uppercase;
   }
 
-//   
-
-// 
 .card-body{
     overflow-x: auto;
+    height: calc(100vh - 70px);
+}
+
+
+tbody tr:last-child{
+    background-color: #000;
+    color: #fff;
+}
+tbody tr:last-child td{
+    font-weight: bold;
 }
